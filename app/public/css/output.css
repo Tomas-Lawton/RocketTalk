@@ -224,7 +224,7 @@ button,
 [type='submit'] {
   -webkit-appearance: button;
   /* 1 */
-  background-color: transparent;
+  /* background-color: transparent; */
   /* 2 */
   background-image: none;
   /* 2 */
@@ -764,6 +764,11 @@ video {
   max-width: 1200px;
   margin: 0 auto;
   display: grid;
+  gap: 1rem;
+}
+
+.container-language-options-column {
+  margin: 0 auto;
   gap: 1rem;
 }
 

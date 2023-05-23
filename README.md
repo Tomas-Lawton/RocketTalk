@@ -1,4 +1,4 @@
-#RocketLang
+#RocketTalk
 
-MVP for AI Language App: RocketLang
+MVP for AI Language App: RocketTalk
 React Version Allows for Session Prototype

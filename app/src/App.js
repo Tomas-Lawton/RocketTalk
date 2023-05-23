@@ -20,9 +20,12 @@ function App() {
   );
 }
 
-// PrivateRoute component to handle authentication
 const PrivateRoute = ({ children }) => {
-  const isAuthenticated = false;
+  // set with dispatch
+  // const isAuthenticated = false;
+
+  const isAuthenticated = true;
+
 
   return isAuthenticated ? (
     <>

@@ -68,16 +68,17 @@ export default function LandingPage() {
       <div className="main" ref={landingSection}>
         <div className="relative flex items-center h-screen px-4 lg:px-0 bg-white dark:bg-dark">
           <div className="sticky z-10 w-full lg:w-2/5 2xl:w-1/2 mx-auto text-center">
-            <h1 className="heading text-9xl lg:text-5xl !leading-normal accent">RocketLang
-            </h1>
-            <p className="text-neutral-600 dark:text-gray-400 text-3xl font-medium leading-normal my-4">Supercharge your
-              learning a language with RocketLang's powerful conversational AI, <span className="accent">now in 48
+            {/* <h1 className="heading text-9xl lg:text-5xl !leading-normal accent">RocketTalk */}
+            <img src="./img/logo.svg" alt="logo" className="block"/>
+
+            {/* </h1> */}
+            <p className="text-neutral-600 dark:text-gray-400 text-3xl font-medium leading-normal my-4">Ignite your journey to fluency with RocketTalk's powerful conversational AI, <span className="accent">now in 48
                 languages!</span>
             </p>
             <div className="flex flex-col lg:flex-row items-center justify-center mt-8 p-6">
-              <Link to="#auth" className="btn bg-[#EC9A00]">Get Started</Link>
+              <Link to="/auth" className="btn bg-[#EC9A00]">Get Started</Link>
               <Link to="#features"
-                className="btn bg-[#090E34] text-neutral-900 bg-opacity-20 hover:bg-opacity-30 dark:bg-[#ffff64] dark:bg-opacity-10 dark:hover:bg-opacity-5">Learn
+                className="btn bg-[#090E34] text-neutral-900 bg-opacity-20 hover:bg-opacity-30 dark:bg-[#ffff64] dark:bg-opacity-10 dark:hover:bg-opacity-5" onClick={() => featureSection.current.scrollIntoView({ behavior: 'smooth' })}>Learn
                 More</Link>
             </div>
 
@@ -88,7 +89,7 @@ export default function LandingPage() {
 
           <img src="./img/rocket3.svg" alt="logo" className="absolute bottom-0 left-0 ignore" />
 
-
+{/* 
           <div className="absolute top-0 right-0">
             <svg width="450" height="556" viewBox="0 0 450 556" fill="none" xmlns="http://www.w3.org/2000/svg">
               <circle cx="277" cy="63" r="225" fill="url(#paint0_linear_25:217)"></circle>
@@ -140,7 +141,7 @@ export default function LandingPage() {
                 </linearGradient>
               </defs>
             </svg>
-          </div>
+          </div> */}
 
 
           <div className="absolute bottom-0 left-0">
@@ -223,12 +224,31 @@ export default function LandingPage() {
                     </div>
                     <div className="text-center px-4">
                       <h3 className="heading text-2xl mb-2 leading-normal">
-                        Immersive Conversations
+                      Immersive Conversational AI
                       </h3>
-                      <p className="text-base text-gray-500 dark:text-gray-400 opacity-90">Tuae nam ex
-                        similique
-                        incidunt expedita exerci tationem laudantium. Repellendus quisquam numquam
-                        perferendis earum sapiente non tempore? Fugit repellat ut maiores.
+                      <p className="text-base text-gray-500 dark:text-gray-400 opacity-90">
+                      Our AI-powered conversations use natural language processing and generation techniques so you can say goodbye to dull textbooks and hello to an immersive, interactive experience like never before!
+                      </p>
+                    </div>
+                  </div>
+                </div>
+                <div className="features-box ">
+                  <div className="py-4 px-1">
+                    <div className="icon-box mb-6">
+                      <svg width="50" height="50" viewBox="0 0 40 40" className="mx-auto svg-fill">
+                        <path opacity="0.5"
+                          d="M20 30C22.75 30 25 32.25 25 35C25 37.75 22.75 40 20 40C17.25 40 15 37.75 15 35C15 32.25 17.25 30 20 30ZM35 30C37.75 30 40 32.25 40 35C40 37.75 37.75 40 35 40C32.25 40 30 37.75 30 35C30 32.25 32.25 30 35 30ZM35 15C37.75 15 40 17.25 40 20C40 22.75 37.75 25 35 25C32.25 25 30 22.75 30 20C30 17.25 32.25 15 35 15Z">
+                        </path>
+                        <path
+                          d="M20 15C22.75 15 25 17.25 25 20C25 22.75 22.75 25 20 25C17.25 25 15 22.75 15 20C15 17.25 17.25 15 20 15ZM20 0C22.75 0 25 2.25 25 5C25 7.75 22.75 10 20 10C17.25 10 15 7.75 15 5C15 2.25 17.25 0 20 0ZM5 30C7.75 30 10 32.25 10 35C10 37.75 7.75 40 5 40C2.25 40 0 37.75 0 35C0 32.25 2.25 30 5 30ZM5 15C7.75 15 10 17.25 10 20C10 22.75 7.75 25 5 25C2.25 25 0 22.75 0 20C0 17.25 2.25 15 5 15ZM5 0C7.75 0 10 2.25 10 5C10 7.75 7.75 10 5 10C2.25 10 0 7.75 0 5C0 2.25 2.25 0 5 0ZM35 0C37.75 0 40 2.25 40 5C40 7.75 37.75 10 35 10C32.25 10 30 7.75 30 5C30 2.25 32.25 0 35 0Z">
+                        </path>
+                      </svg>
+                    </div>
+                    <div className="text-center px-4">
+                      <h3 className="heading text-2xl mb-2 leading-normal">
+                      Personalization
+                      </h3>
+                      <p className="text-base text-gray-500 dark:text-gray-400 opacity-90">Tailored to your unique needs and goals, RocketTalk provides customized experiences that adapt to your unique style, leaving behind one-size-fits-all approaches to learning.
                       </p>
                     </div>
                   </div>
@@ -249,38 +269,12 @@ export default function LandingPage() {
                       <h3 className="heading text-2xl mb-2 leading-normal">
                         Gamified Progress Tracking
                       </h3>
-                      <p className="text-base text-gray-500 dark:text-gray-400 opacity-90">Tuae nam ex
-                        similique
-                        incidunt expedita exerci tationem laudantium. Repellendus quisquam numquam
-                        perferendis earum sapiente non tempore? Fugit repellat ut maiores.
+                      <p className="text-base text-gray-500 dark:text-gray-400 opacity-90">Level up as you immerse yourself in captivating conversations, unlocking new linguistic horizons. Experience the thrill of gamified progress tracking, fueling your motivation every step of the way.
                       </p>
                     </div>
                   </div>
                 </div>
-                <div className="features-box ">
-                  <div className="py-4 px-1">
-                    <div className="icon-box mb-6">
-                      <svg width="50" height="50" viewBox="0 0 40 40" className="mx-auto svg-fill">
-                        <path opacity="0.5"
-                          d="M20 30C22.75 30 25 32.25 25 35C25 37.75 22.75 40 20 40C17.25 40 15 37.75 15 35C15 32.25 17.25 30 20 30ZM35 30C37.75 30 40 32.25 40 35C40 37.75 37.75 40 35 40C32.25 40 30 37.75 30 35C30 32.25 32.25 30 35 30ZM35 15C37.75 15 40 17.25 40 20C40 22.75 37.75 25 35 25C32.25 25 30 22.75 30 20C30 17.25 32.25 15 35 15Z">
-                        </path>
-                        <path
-                          d="M20 15C22.75 15 25 17.25 25 20C25 22.75 22.75 25 20 25C17.25 25 15 22.75 15 20C15 17.25 17.25 15 20 15ZM20 0C22.75 0 25 2.25 25 5C25 7.75 22.75 10 20 10C17.25 10 15 7.75 15 5C15 2.25 17.25 0 20 0ZM5 30C7.75 30 10 32.25 10 35C10 37.75 7.75 40 5 40C2.25 40 0 37.75 0 35C0 32.25 2.25 30 5 30ZM5 15C7.75 15 10 17.25 10 20C10 22.75 7.75 25 5 25C2.25 25 0 22.75 0 20C0 17.25 2.25 15 5 15ZM5 0C7.75 0 10 2.25 10 5C10 7.75 7.75 10 5 10C2.25 10 0 7.75 0 5C0 2.25 2.25 0 5 0ZM35 0C37.75 0 40 2.25 40 5C40 7.75 37.75 10 35 10C32.25 10 30 7.75 30 5C30 2.25 32.25 0 35 0Z">
-                        </path>
-                      </svg>
-                    </div>
-                    <div className="text-center px-4">
-                      <h3 className="heading text-2xl mb-2 leading-normal">
-                        Rewards
-                      </h3>
-                      <p className="text-base text-gray-500 dark:text-gray-400 opacity-90">Tuae nam ex
-                        similique
-                        incidunt expedita exerci tationem laudantium. Repellendus quisquam numquam
-                        perferendis earum sapiente non tempore? Fugit repellat ut maiores.
-                      </p>
-                    </div>
-                  </div>
-                </div>
+              
               </div>
             </div>
           </div>
@@ -291,10 +285,10 @@ export default function LandingPage() {
           id="demo" ref={demoSection}>
           <div className="container mx-auto px-4">
             <div className="lg:w-1/2 2xl:w-1/2 mx-auto text-center">
-              <h2 className="heading text-white text-3xl lg:text-5xl !leading-normal">See what RocketLang can do!
+              <h2 className="heading text-white text-3xl lg:text-5xl !leading-normal">See what RocketTalk can do!
               </h2>
               <p className="text-white opacity-90 text-xl">Learning a language requires
-                extensive practice of reading, writing, and speaking. RocketLang rolls this into one for a
+                extensive practice of reading, writing, and speaking. RocketTalk rolls this into one for a
                 rapidly rewarding experience.
               </p>
             </div>
@@ -323,9 +317,9 @@ export default function LandingPage() {
               <div className="price-table ml-0 lg:ml-8">
                 <div className="price-title">
                   <div className="flex justify-between mb-4">
-                    <h3 className="text-neutral-900 dark:text-white font-bold text-3xl">$0 <span
+                    <h3 className="text-neutral-900  font-bold text-3xl">$0 <span
                       className="text-gray-500">/mo</span></h3>
-                    <h4 className="text-right text-neutral-900 dark:text-white font-medium text-2xl">Basic</h4>
+                    <h4 className="text-right text-neutral-900  font-medium text-2xl">Basic</h4>
                   </div>
                   <p className="text-gray-400 text-opacity-90 text-base font-medium">Basic Tier: Beginner-level courses, vocabulary, grammar exercises, flashcards, quizzes, limited language exchange.
                   </p>
@@ -524,9 +518,9 @@ export default function LandingPage() {
               <div className="price-table mr-0 lg:mr-8">
                 <div className="price-title">
                   <div className="flex justify-between mb-4">
-                    <h3 className="text-neutral-900 dark:text-white font-bold text-3xl">$20 <span
+                    <h3 className="text-neutral-900  font-bold text-3xl">$20 <span
                       className="text-gray-500">/mo</span></h3>
-                    <h4 className="text-right text-neutral-900 dark:text-white font-medium text-2xl accent">Pro</h4>
+                    <h4 className="text-right text-neutral-900  font-medium text-2xl accent">Pro</h4>
                   </div>
                   <p className="text-gray-400 text-opacity-90 text-base font-medium">Pro Tier: Value Tier content + specialized courses, personalized feedback, live group classNamees, immersion events, offline materials, priority support.</p>
                   <button type="submit" className="btn price-btn bg-[#EC9A00]">Select Pro Plan</button>
@@ -633,7 +627,7 @@ export default function LandingPage() {
                   <h2 className="heading text-2xl lg:text-3xl font-bold !leading-normal">
                     Request a Feature
                   </h2>
-                  <p className="text-gray-500 dark:text-gray-400 text-opacity-90 text-base font-bold">At RocketLang, we are actively building new features to provide our users with the best possible language learning experience. We'd love to hear from you!
+                  <p className="text-gray-500 dark:text-gray-400 text-opacity-90 text-base font-bold">At RocketTalk, we are actively building new features to provide our users with the best possible language learning experience. We'd love to hear from you!
                   </p>
                 </div>
                 <div className="form-contact mt-10">
@@ -685,7 +679,7 @@ export default function LandingPage() {
                         Subscribe
                       </button>
                     </div>
-                    <p className="text-gray-400 text-opacity-90 text-base font-bold mt-6 text-center">At RocketLang, we have a no spam
+                    <p className="text-gray-400 text-opacity-90 text-base font-bold mt-6 text-center">At RocketTalk, we have a no spam
                       guarantee!
                     </p>
                   </form>
@@ -701,8 +695,7 @@ export default function LandingPage() {
               <div className="basis-full lg:basis-1/3 mb-6 lg:mb-0">
                 <div className="footer-logo mb-7">
                   <img src="./img/logo.svg" alt="logo" className="block"/></div>
-                <p className="text-gray-500 dark:text-gray-400 opacity-90 text-lg">Supercharge your learning a
-                  language with RocketLang's powerful conversational AI, now in 48 languages!
+                <p className="text-gray-500 dark:text-gray-400 opacity-90 text-lg">Ignite your journey to fluency with RocketTalk's powerful conversational AI, now in 48 languages!
 
                 </p>
                 <div className="mt-8">
