@@ -598,6 +598,7 @@ video {
   font-weight: 400;
   --tw-text-opacity: 1;
   color: rgb(23 23 23 / var(--tw-text-opacity));
+  cursor: pointer;
 }
 
 .menu-item:hover {
@@ -1483,6 +1484,10 @@ color: #EC9A00
 .svg-fill {
   /* fill: rgb(74, 108, 247); */
   fill: #EC9A00;
+}
+
+#logo {
+  cursor: pointer;
 }
 
 .accent {
