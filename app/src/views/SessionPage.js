@@ -1,6 +1,5 @@
 import Chat from "../components/Chat/Chat.js"
 import './Session.css';
-import { Link } from "react-router-dom";
 import { Switch } from 'antd';
 import { useState } from "react";
 
@@ -11,7 +10,7 @@ const LeftPanel = ({ handleBack }) => {
 
     return (
         <div className="left-panel">
-            <div className="panel-header mt-8">
+            <div className="panel-header mt-4">
                 {/* <img src="./img/logo_icon.svg" alt="logo" className="block"/> */}
                 <div>
                     <h2 className="text-neutral-900 font-medium text-3xl accent">Welcome, Tomas!</h2>
@@ -25,22 +24,22 @@ const LeftPanel = ({ handleBack }) => {
                     <h2 className="text-grey-900 text-3xl">Spanish</h2>
                 </div>
                 <div className="container-language-options-column">
-                    {[...Array(4)].map((e, i) => <img src={`./img/LangOptions/frame${i}.png`} className="language-option mt-4" alt={`Option Language ${i}`} />)}
-                </div>
-            </div>
-
-            <div>
-            <div className="flex flex-col lg:flex-row items-center justify-center mt-8 p-6 w-full">
-                    <button className="btn bg-[#EC9A00]">Add Language <i class="fa-solid fa-plus"></i></button>
+                    {[...Array(4)].map((e, i) => <img src={`./img/LangOptions/frame${i}.png`} key={i} className="language-option mt-4" alt={`Option Language ${i}`} />)}
                 </div>
             </div>
 
             <div className="panel-footer">
-                <div>
-                    <h2 className="text-gray-400 text-opacity-90 text-base font-medium accent">Email Notification</h2>
-                    <h3 className="text-gray-400 text-opacity-90 text-base font-medium">Weekly progress report</h3>
+                <div className="flex flex-col lg:flex-row items-center justify-center btn w-full">
+                    <button className="btn bg-[#EC9A00]">Add Language <i className="fa-solid fa-plus"></i></button>
                 </div>
-                <Switch onChange={onSwitch} />
+
+                <div className="email-subscriber">
+                    <div>
+                        <h2 className="text-gray-400 text-opacity-90 text-base font-medium accent">Email Notification</h2>
+                        <h3 className="text-gray-400 text-opacity-90 text-base font-medium">Weekly progress report</h3>
+                    </div>
+                    <Switch onChange={onSwitch} />
+                </div>
             </div>
         </div>
     );

@@ -1,27 +1,46 @@
+.message-container {
+  padding: 10px;
+  border-radius: 8px;
+  /* box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); */
+  width: 65%;
+  display: flex;
+  align-items: flex-start;
+  animation: bounceIn 0.5s ease; /* Added animation */
+}
+
 .user-message {
   display: flex;
   flex-direction: column;
   align-items: flex-end;
   margin-bottom: 10px;
+  background-color: #ec9a00;
+  color: white;
+  margin-left: auto;
 }
 
 .agent-message {
   display: flex;
-  flex-direction: column;
+  /* flex-direction: column; */
   align-items: flex-start;
   margin-bottom: 10px;
+  color: black;
 }
 
-.message-container {
-  padding: 10px;
-  border-radius: 8px;
-  background-color: #f2f2f2;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+.agent-message .message-content {
+  background-color: #ffffff;
+  background: white;
+  padding: 20px;
+  border-radius: 0.5em 0.5em 0.5em 0;
+}
+
+.user-message .message-text {
+  color: white;
 }
 
 .message-content {
   display: flex;
   flex-direction: column;
+  flex: 1;
 }
 
 .message-header {
@@ -36,17 +55,31 @@
   align-items: center;
 }
 
-.user-icon,
 .agent-icon {
+  width: 44px;
+  height: 44px;
+  margin-right: 5px;
+}
+
+.user-icon {
   width: 24px;
   height: 24px;
-  margin-right: 5px;
+  justify-content: flex-end;
+  display: flex;
+  align-items: center;
+}
+
+.agent-icon img {
+  width: 100%;
+  height: 100%;
+  border-radius: 0.5em;
+  background: white;
+  padding: 2px;
 }
 
 .user-name,
 .agent-name {
   font-weight: bold;
-  color: #333;
 }
 
 .message-text {
@@ -55,7 +88,7 @@
 }
 
 .message-audio-button {
-  background-color: #EC9A00;
+  background-color: #ec9a00;
   color: white;
   border: none;
   padding: 8px 12px;
@@ -66,5 +99,16 @@
 }
 
 .message-audio-button:hover {
-  background-color: #D77C00;
+  background-color: #d77c00;
+}
+
+@keyframes bounceIn {
+  from {
+    transform: scale(0.9);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
 }

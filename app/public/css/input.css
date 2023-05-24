@@ -68,7 +68,6 @@
 }
 @layer utilities {
     .svg-fill {
-        /* fill: rgb(74, 108, 247); */
         fill: #EC9A00;
     }
 }

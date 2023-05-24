@@ -1,6 +1,6 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
-    content: ["./public/index.html"], darkMode: "class", theme: {
+    content: ["./public/index.html"], darkMode: "className", theme: {
         extend: {
             colors: {
                 "slate-800": "rgb(29,33,68)",
