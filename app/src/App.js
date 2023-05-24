@@ -2,15 +2,15 @@ import React from "react";
 import { BrowserRouter as Router, Route, Routes, Navigate } from 'react-router-dom';
 
 import LandingPage from "./views/LandingPage"
-import Authentication from "./views/Authentication"
 import SessionPage from "./views/SessionPage"
+import Setup from "./views/Setup/Setup";
 
 function App() {
   return (
     <Router>
       <Routes>
         <Route path="/" element={<LandingPage />} />
-        <Route path="/auth" element={<Authentication />} />
+        <Route path="/auth" element={<Setup />} />
         <Route
           path="/session"
           element={<PrivateRoute><SessionPage /></PrivateRoute>}

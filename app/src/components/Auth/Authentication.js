@@ -1,11 +1,11 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import { useNavigate } from 'react-router-dom';
-import "./Authentication.css";
+import "./Authentication.css"
 
-const Authentication = () => {
+const Authentication = ({ onLogin }) => {
+    const [isLogin, setIsLogin] = useState(onLogin)
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
-    const [isLogin, setIsLogin] = useState(true);
     const navigate = useNavigate();
 
     const handleFormSubmit = (e) => {
@@ -36,6 +36,7 @@ const Authentication = () => {
     const toggleAuthenticationMode = () => {
         setIsLogin((prevIsLogin) => !prevIsLogin);
     };
+
 
     return (
         <div className="auth-container">
