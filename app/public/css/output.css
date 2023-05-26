@@ -1747,3 +1747,11 @@ color: #EC9A00
     background-size: cover;
   }
 }
+
+.orange {
+  background-color: #EC9A00 !important;
+}
+
+.emojiFlag {
+  margin-top: -3px;
+}

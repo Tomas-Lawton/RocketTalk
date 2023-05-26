@@ -1,5 +1,23 @@
-import { useEffect, useRef } from "react"
+import { useEffect, useRef, useState } from "react"
 import { Link } from 'react-router-dom';
+import { Select } from 'antd';
+import ReactCountryFlag from "react-country-flag"
+
+
+const { Option } = Select;
+
+const languageOptions = [
+  { value: 'us', label: 'English' },
+  { value: 'es', label: 'Español' },
+  { value: 'fr', label: 'Français' },
+  { value: 'de', label: 'Deutsch' },
+  { value: 'it', label: 'Italiano' },
+  { value: 'pt', label: 'Português' },
+  { value: 'ru', label: 'Русский' },
+  { value: 'ch', label: '中文' },
+  { value: 'jp', label: '日本語' },
+  { value: 'kr', label: '한국어' },
+];
 
 export default function LandingPage() {
   const landingSection = useRef();
@@ -7,6 +25,13 @@ export default function LandingPage() {
   const demoSection = useRef();
   const pricingSection = useRef();
   const contactSection = useRef();
+
+  const [selectedLanguage, setSelectedLanguage] = useState('US');
+
+  const handleLanguageChange = (value) => {
+    setSelectedLanguage(value);
+  };
+
 
   useEffect(() => {
     const onScroll = () => {
@@ -46,7 +71,7 @@ export default function LandingPage() {
         <div className="px-4 py-4 lg:px-8 lg:py-1" id="header">
           <div className="flex items-center justify-between">
             <div className="logo">
-              <img src="./img/logo.svg" alt="logo" className="block dark:hidden w-44" id="logo" onClick={() => landingSection.current.scrollIntoView({ behavior: 'smooth' })}/>
+              <img src="./img/logo.svg" alt="logo" className="block dark:hidden w-44" id="logo" onClick={() => landingSection.current.scrollIntoView({ behavior: 'smooth' })} />
             </div>
             <div className="navigation hidden lg:block">
               <nav>
@@ -55,6 +80,27 @@ export default function LandingPage() {
                   <li className="px-6 py-4 menu-item" onClick={() => demoSection.current.scrollIntoView({ behavior: 'smooth' })}>Demo</li>
                   <li className="px-6 py-4 menu-item" onClick={() => pricingSection.current.scrollIntoView({ behavior: 'smooth' })}>Pricing</li>
                   <li className="px-6 py-4 menu-item" onClick={() => contactSection.current.scrollIntoView({ behavior: 'smooth' })}>Contact Us</li>
+                  <div className="language-select">
+                    <Select defaultValue={"EN"}
+                      onChange={handleLanguageChange}
+                      width={"55"}
+                    >
+                      {languageOptions.map((option) => (
+                        <Option key={option.value} value={option.value} className="flex content-center" >
+                          <ReactCountryFlag
+                            countryCode={option.value.toUpperCase()}
+                            className="emojiFlag"
+                            svg
+                            cdnUrl="https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/3.4.3/flags/1x1/"
+                            cdnSuffix="svg"
+                            style={{
+                              fontSize: '1em',
+                              lineHeight: '1em',
+                            }} />
+                        </Option>
+                      ))}
+                    </Select>
+                  </div>
                 </ul>
               </nav>
             </div>
@@ -69,11 +115,11 @@ export default function LandingPage() {
         <div className="relative flex items-center h-screen px-4 lg:px-0 bg-white dark:bg-dark">
           <div className="sticky z-10 w-full lg:w-2/5 2xl:w-1/2 mx-auto text-center">
             {/* <h1 className="heading text-9xl lg:text-5xl !leading-normal accent">RocketTalk */}
-            <img src="./img/logo.svg" alt="logo" className="block"/>
+            <img src="./img/logo.svg" alt="logo" className="block" />
 
             {/* </h1> */}
             <p className="text-neutral-600 dark:text-gray-400 text-3xl font-medium leading-normal my-4">Ignite your journey to fluency with RocketTalk's powerful conversational AI, <span className="accent">now in 48
-                languages!</span>
+              languages!</span>
             </p>
             <div className="flex flex-col lg:flex-row items-center justify-center mt-8 p-6">
               <Link to="/auth" className="btn bg-[#EC9A00]">Get Started</Link>
@@ -83,66 +129,11 @@ export default function LandingPage() {
             </div>
 
             <div className="container-language-options mt-8">
-              {[...Array(6)].map((e, i) => <Link to="/auth"><img src={`./img/LangOptions/frame${i}.png`} className="language-option" alt={`Option Language ${i}`}/></Link>)}
+              {[...Array(6)].map((e, i) => <Link to="/auth"><img src={`./img/LangOptions/frame${i}.png`} className="language-option" alt={`Option Language ${i}`} /></Link>)}
             </div>
           </div>
 
           <img src="./img/rocket3.svg" alt="logo" className="absolute bottom-0 left-0 ignore" />
-
-{/* 
-          <div className="absolute top-0 right-0">
-            <svg width="450" height="556" viewBox="0 0 450 556" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <circle cx="277" cy="63" r="225" fill="url(#paint0_linear_25:217)"></circle>
-              <circle cx="17.9997" cy="182" r="18" fill="url(#paint1_radial_25:217)"></circle>
-              <circle cx="76.9997" cy="288" r="34" fill="url(#paint2_radial_25:217)"></circle>
-              <circle cx="325.486" cy="302.87" r="180" transform="rotate(-37.6852 325.486 302.87)"
-                fill="url(#paint3_linear_25:217)"></circle>
-              <circle opacity="0.8" cx="184.521" cy="315.521" r="132.862"
-                transform="rotate(114.874 184.521 315.521)" stroke="url(#paint4_linear_25:217)"></circle>
-              <circle opacity="0.8" cx="356" cy="290" r="179.5" transform="rotate(-30 356 290)"
-                stroke="url(#paint5_linear_25:217)"></circle>
-              <circle opacity="0.8" cx="191.659" cy="302.659" r="133.362"
-                transform="rotate(133.319 191.659 302.659)" fill="url(#paint6_linear_25:217)"></circle>
-              <defs>
-                <linearGradient id="paint0_linear_25:217" x1="-54.5003" y1="-178" x2="222" y2="288"
-                  gradientUnits="userSpaceOnUse">
-                  <stop stop-color="#EC9A00"></stop>
-                  <stop offset="1" stop-color="#EC9A00" stop-opacity="0"></stop>
-                </linearGradient>
-                <radialGradient id="paint1_radial_25:217" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse"
-                  gradientTransform="translate(17.9997 182) rotate(90) scale(18)">
-                  <stop offset="0.145833" stop-color="#EC9A00" stop-opacity="0"></stop>
-                  <stop offset="1" stop-color="#EC9A00" stop-opacity="0.08"></stop>
-                </radialGradient>
-                <radialGradient id="paint2_radial_25:217" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse"
-                  gradientTransform="translate(76.9997 288) rotate(90) scale(34)">
-                  <stop offset="0.145833" stop-color="#EC9A00" stop-opacity="0"></stop>
-                  <stop offset="1" stop-color="#EC9A00" stop-opacity="0.08"></stop>
-                </radialGradient>
-                <linearGradient id="paint3_linear_25:217" x1="226.775" y1="-66.1548" x2="292.157" y2="351.421"
-                  gradientUnits="userSpaceOnUse">
-                  <stop stop-color="#EC9A00"></stop>
-                  <stop offset="1" stop-color="#EC9A00" stop-opacity="0"></stop>
-                </linearGradient>
-                <linearGradient id="paint4_linear_25:217" x1="184.521" y1="182.159" x2="184.521" y2="448.882"
-                  gradientUnits="userSpaceOnUse">
-                  <stop stop-color="#EC9A00"></stop>
-                  <stop offset="1" stop-color="white" stop-opacity="0"></stop>
-                </linearGradient>
-                <linearGradient id="paint5_linear_25:217" x1="356" y1="110" x2="356" y2="470"
-                  gradientUnits="userSpaceOnUse">
-                  <stop stop-color="#EC9A00"></stop>
-                  <stop offset="1" stop-color="white" stop-opacity="0"></stop>
-                </linearGradient>
-                <linearGradient id="paint6_linear_25:217" x1="118.524" y1="29.2497" x2="166.965" y2="338.63"
-                  gradientUnits="userSpaceOnUse">
-                  <stop stop-color="#EC9A00"></stop>
-                  <stop offset="1" stop-color="#EC9A00" stop-opacity="0"></stop>
-                </linearGradient>
-              </defs>
-            </svg>
-          </div> */}
-
 
           <div className="absolute bottom-0 left-0">
             <svg width="364" height="201" viewBox="0 0 364 201" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -224,10 +215,10 @@ export default function LandingPage() {
                     </div>
                     <div className="text-center px-4">
                       <h3 className="heading text-2xl mb-2 leading-normal">
-                      Immersive Conversational AI
+                        Immersive Conversational AI
                       </h3>
                       <p className="text-base text-gray-500 dark:text-gray-400 opacity-90">
-                      Our AI-powered conversations use natural language processing and generation techniques so you can say goodbye to dull textbooks and hello to an immersive, interactive experience like never before!
+                        Our AI-powered conversations use natural language processing and generation techniques so you can say goodbye to dull textbooks and hello to an immersive, interactive experience like never before!
                       </p>
                     </div>
                   </div>
@@ -246,7 +237,7 @@ export default function LandingPage() {
                     </div>
                     <div className="text-center px-4">
                       <h3 className="heading text-2xl mb-2 leading-normal">
-                      Personalization
+                        Personalization
                       </h3>
                       <p className="text-base text-gray-500 dark:text-gray-400 opacity-90">Tailored to your unique needs and goals, RocketTalk provides customized experiences that adapt to your unique style, leaving behind one-size-fits-all approaches to learning.
                       </p>
@@ -274,7 +265,7 @@ export default function LandingPage() {
                     </div>
                   </div>
                 </div>
-              
+
               </div>
             </div>
           </div>
@@ -694,7 +685,7 @@ export default function LandingPage() {
               className="container flex md:flex-row flex-wrap lg:flex-nowrap items-start justify-between px-4 mx-auto">
               <div className="basis-full lg:basis-1/3 mb-6 lg:mb-0">
                 <div className="footer-logo mb-7">
-                  <img src="./img/logo.svg" alt="logo" className="block"/></div>
+                  <img src="./img/logo.svg" alt="logo" className="block" /></div>
                 <p className="text-gray-500 dark:text-gray-400 opacity-90 text-lg">Ignite your journey to fluency with RocketTalk's powerful conversational AI, now in 48 languages!
 
                 </p>

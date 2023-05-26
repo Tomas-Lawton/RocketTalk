@@ -11,9 +11,9 @@ const LeftPanel = ({ handleBack }) => {
     return (
         <div className="left-panel">
             <div className="panel-header mt-4 mb-4">
-                <div>
-                    <h2 className="text-neutral-900 font-medium text-3xl accent">Welcome, Tomas!</h2>
-                    <p className="text-gray-400 text-opacity-90 text-base font-medium mt-2">Here you can start a conversation, interact with the chatbot, and learn a new language.</p>
+                <div className="orange">
+                    <h2 className="text-white font-medium text-3xl">Welcome, Tomas!</h2>
+                    <p className="text-white text-opacity-90 text-base font-medium mt-2">Here you can start a conversation, interact with the chatbot, and learn a new language.</p>
                 </div>
             </div>
 

@@ -10,6 +10,10 @@
 
 }
 
+.message-in-playback {
+  border: 3px solid #ec9a00;
+}
+
 .user-message {
   display: flex;
   flex-direction: column;

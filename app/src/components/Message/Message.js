@@ -14,11 +14,14 @@ const Message = ({ text, audio, isUser, onListen, userName }) => {
             </div>
           </div>
         ) :
-          (
-            <div className="agent-icon">
-              <img src="./img/logo_icon.svg" alt="logo" className="block" />
-            </div>
-          )}
+        (
+          <div className="agent-icon">
+            <img src="./img/logo_icon.svg" alt="logo" className="block" />
+          </div>
+        )}
+
+      {/* make it active on playback */}
+      {/* message-in-playback */}
       <div className="message-content">
         <div className="message-header">
           {isUser ? (

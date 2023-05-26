@@ -53,23 +53,25 @@ const Chat = () => {
 
 
 
-  const defaultMessage = `Welcome to the session. Today I will guide you through learning about the topic of ordering food. Vamos!\n
-  Bienvenidos a la sesión. Hoy os guiaré en el aprendizaje sobre el tema de pedir comida. ¡Vamos!`;
+  const defaultMessage = `Welcome to the session. Today I will guide you through learning about the topic of ordering food. Vamos!\n\nBienvenidos a la sesión. Hoy os guiaré en el aprendizaje sobre el tema de pedir comida. ¡Vamos!`;
 
 
 
-  // window.speechSynthesis.getVoices()
 
   const handleListenAudio = (msg) => {
+    const voices = window.speechSynthesis.getVoices();
     const utterance = new SpeechSynthesisUtterance(msg);
+
+    // 
     utterance.addEventListener('end', () => {
       speechSynthesis.cancel();
+      // remove style
     });
-    speechSynthesis.speak(utterance);
 
     if (isPaused) {
       speechSynthesis.resume();
     } else {
+      // utterance.voice = voices[0];
       utterance.voice = voice;
       utterance.pitch = pitch;
       utterance.rate = rate;
@@ -80,34 +82,34 @@ const Chat = () => {
     setIsPaused(false);
   };
 
-  const handlePause = () => {
-    const synth = window.speechSynthesis;
-    setIsPaused(true);
-    synth.pause();
-  };
+  // const handlePause = () => {
+  //   const synth = window.speechSynthesis;
+  //   setIsPaused(true);
+  //   synth.pause();
+  // };
 
-  const handleStop = () => {
-    const synth = window.speechSynthesis;
-    setIsPaused(false);
-    synth.cancel();
-  };
+  // const handleStop = () => {
+  //   const synth = window.speechSynthesis;
+  //   setIsPaused(false);
+  //   synth.cancel();
+  // };
 
-  const handleVoiceChange = (event) => {
-    const voices = window.speechSynthesis.getVoices();
-    setVoice(voices.find((v) => v.name === event.target.value));
-  };
+  // const handleVoiceChange = (event) => {
+  //   const voices = window.speechSynthesis.getVoices();
+  //   setVoice(voices.find((v) => v.name === event.target.value));
+  // };
 
-  const handlePitchChange = (event) => {
-    setPitch(parseFloat(event.target.value));
-  };
+  // const handlePitchChange = (event) => {
+  //   setPitch(parseFloat(event.target.value));
+  // };
 
-  const handleRateChange = (event) => {
-    setRate(parseFloat(event.target.value));
-  };
+  // const handleRateChange = (event) => {
+  //   setRate(parseFloat(event.target.value));
+  // };
 
-  const handleVolumeChange = (event) => {
-    setVolume(parseFloat(event.target.value));
-  };
+  // const handleVolumeChange = (event) => {
+  //   setVolume(parseFloat(event.target.value));
+  // };
 
 
 
